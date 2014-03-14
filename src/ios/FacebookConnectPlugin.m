@@ -224,8 +224,7 @@
         // type permissions
         if ([self areAllPermissionsReadPermissions:permissions]) {
             [FBSession
-             openActiveSessionWithReadPermissions:permissions
-             allowLoginUI:YES
+             openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
              completionHandler:^(FBSession *session,
                                  FBSessionState state,
                                  NSError *error) {
